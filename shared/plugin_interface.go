@@ -22,7 +22,7 @@ var Logger hclog.Logger
 // directory. It is a UX feature, not a security feature.
 var HandshakeConfig = plugin.HandshakeConfig{
 	ProtocolVersion:  1,
-	MagicCookieKey:   "DEMO_PLUGIN",
+	MagicCookieKey:   "PTT_PLUGIN",
 	MagicCookieValue: "HELLO_PLUGINS",
 }
 

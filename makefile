@@ -1,5 +1,5 @@
 .DEFAULT_GOAL=build
-BINARY_NAME=demo
+BINARY_NAME=ptt
 
 
 .PHONY: dev 

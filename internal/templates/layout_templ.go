@@ -35,7 +35,7 @@ func Layout(modules []*ModuleInfo, contents templ.Component) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Demo</title><link href=\"/static/css/output.css\" rel=\"stylesheet\"></head><body><div id=\"header\" class=\"py-3 text-center text-lg bg-emerald-200 \"><div class=\"mb-3 font-bold text-3xl\"><div id=\"title\">DEMO</div></div><div id=\"module-buttons\" class=\"flex justify-center\"><a href=\"/\" class=\"row-btn\">Home</a> ")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>PTT</title><link href=\"/static/css/output.css\" rel=\"stylesheet\"></head><body><div id=\"header\" class=\"py-3 text-center text-lg bg-emerald-200 \"><div class=\"mb-3 font-bold text-3xl\"><div id=\"title\">PTT</div></div><div id=\"module-buttons\" class=\"flex justify-center\"><a href=\"/\" class=\"row-btn\">Home</a> ")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
