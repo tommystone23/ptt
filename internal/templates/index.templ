@@ -1,0 +1,16 @@
+package templates
+
+templ Index(modules []*ModuleInfo) {
+	<div id="content" class="my-3 text-lg">
+		<div class="mb-4 text-center font-bold text-xl">Loaded Plugins</div>
+		<ul class="text-center">
+			for _, m := range modules {
+				<li>
+					<a href={ templ.URL(m.URL + "/index") } class="btn m-4">
+						{ m.Name } (Version { m.Version })
+					</a>
+				</li>
+			}
+		</ul>
+	</div>
+}

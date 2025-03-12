@@ -1,0 +1,37 @@
+package templates
+
+type ModuleInfo struct {
+	URL string
+	Name string
+	Version string
+}
+
+templ Layout(modules []*ModuleInfo, contents templ.Component) {
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>Demo</title>
+			<link href="/static/css/output.css" rel="stylesheet"/>
+		</head>
+		<body>
+			<div id="header" class="py-3 text-center text-lg bg-emerald-200 ">
+				<div class="mb-3 font-bold text-3xl">
+					<div id="title">DEMO</div>
+				</div>
+				<div id="module-buttons" class="flex justify-center">
+					<a href="/" class="row-btn">Home</a>
+					for _, m := range modules {
+						<a href={ templ.URL(m.URL + "/index") } class="row-btn">
+							{ m.Name }
+						</a>
+					}
+				</div>
+			</div>
+			@contents
+		</body>
+		<script defer src="/static/js/alpine-ajax.min.js"></script>
+		<script defer src="/static/js/alpine.min.js"></script>
+	</html>
+}
