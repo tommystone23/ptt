@@ -132,3 +132,16 @@ make dev
 ```bash
 make clean
 ```
+
+## Docker
+- Build and run Docker image
+```bash
+sudo docker-compose up --build
+```
+- Subsequent launches can be run with:
+```bash
+sudo docker-compose up
+```
+
+For persistent database data, create `db.sqlite` before launching.
+Copy desired plugins to `plugins` directory before launching.
