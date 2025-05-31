@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  ptt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ptt_app:latest
+    container_name: ptt
+    volumes:
+      - ./db.sqlite:/app/db.sqlite
+      - ./plugins:/app/plugins
+    ports:
+      - "8080:8080"
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    stdin_open: true
+    tty: true
