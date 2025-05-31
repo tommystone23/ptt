@@ -99,6 +99,20 @@ discover and attempt to run them.
   - rpc communication handler.
   - Used for communication between PTT & plugins.
 
+> **Note**  
+> The packages above can be installed using `install-deps.sh`.
+
+**Important:** After running `install-deps.sh`, package paths won't be updated in the current terminal session.  
+To apply changes, either:
+
+- Start a **new terminal window**, or
+- Run the following command manually:
+
+```bash
+source ~/.bashrc
+```
+
+
 ## Development Commands
 
 - Build project:
