@@ -51,10 +51,14 @@ func RegisterPluginRoutes(logger hclog.Logger, e *echo.Echo, g *app.Global, plug
 				// Replace the existing response status & headers with plugin's response
 				registerHelper(c, resp)
 
-				// Check if the response is a CSS file instead of a regular HTML response
-				if t := resp.Header.Get("Content-Type"); t == "text/css" {
-					logger.Trace("writing CSS response", "url", c.Request().URL.String())
-					// Copy (write) the CSS file without any HTML or layout
+				if resp.Header.Get("Content-Type") == "" {
+					logger.Error("missing Content-Type header", "url", c.Request().URL.String())
+				}
+
+				// Return raw response data when content type is not text/html
+				if t := resp.Header.Get("Content-Type"); t != "text/html" {
+					logMsg := fmt.Sprintf("writing %s response", t)
+					logger.Trace(logMsg, "url", c.Request().URL.String())
 					_, err = c.Response().Write([]byte(resp.Body))
 					return err
 				}
